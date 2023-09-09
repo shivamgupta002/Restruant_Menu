@@ -1,0 +1,86 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(70, 67, 67);
+    width: 100vw;
+    position: fixed;
+    z-index: 9999;
+}
+
+nav h1 {
+    font-weight: 600;
+    color: #21beda;
+    font-size: 1.3rem;
+    padding: 1px 5px;
+    animation: logo;
+    /* transition: all 1s ease-in-out; */
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes logo{
+    0%,100%{
+        opacity: 0.7;
+    }
+   
+    25%,75%{
+        opacity: 1;
+    }
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+li {
+    list-style: none;
+    padding: 0.3rem 1.2rem;
+    position: relative;
+    transition: 0.9s;
+    display: block;
+    cursor: pointer;
+    color: #dbe8eb;
+}
+button{
+    transition: 0.6s;
+    font-size: 1.1rem;
+    border: 0px solid white;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+    background-color: rgb(70, 67, 67);
+    color: #dbe8eb;
+}
+button:hover{
+    color:rgb(156, 144, 177)
+}
+li::before {
+    position: absolute;
+    content: "";
+    width: 97%;
+    height: 3px;
+    top: 100%;
+    left: 0 ;
+    bottom: 0;
+    background-color: #662fa5;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+li:hover::before {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+@media screen and (max-width: 480px) {
+   *{
+    font-size: 13px;
+   }
+
+    li {
+        padding: 0px 0.2rem;
+    }
+}
